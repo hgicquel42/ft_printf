@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:30:26 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 15:15:19 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:36:17 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,31 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-int	ft_printf(char *input, ...);
+int	ft_putchar(char c);
+
+int	ft_putstr(char *s);
+
+int	ft_putint(long x);
+
+int	ft_putuint(unsigned int x);
+
+int	ft_puthex(unsigned long n);
+
+int	ft_printf(const char *format, ...);
 
 int	ft_printf_str(va_list args);
 
 int	ft_printf_chr(va_list args);
 
 int	ft_printf_ptr(va_list args);
+
+int	ft_printf_int(va_list args);
+
+int	ft_printf_uint(va_list args);
+
+int	ft_printf_hex(va_list args);
+
+int	ft_printf_hex2(va_list args);
 
 int	ft_printf_pct(void);
 

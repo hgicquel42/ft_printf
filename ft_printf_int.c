@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 13:03:33 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:32:22 by hgicquel         ###   ########.fr       */
+/*   Created: 2021/11/25 15:51:40 by hgicquel          #+#    #+#             */
+/*   Updated: 2021/11/25 16:18:39 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_putint(long x)
 {
-	size_t	i;
+	size_t	l;
 
-	i = 0;
-	while (s[i])
-		i++;
-	write(1, s, i);
-	return (i);
+	l = 0;
+	if (x < 0)
+	{
+		l += ft_putchar('-');
+		x *= -1;
+	}
+	if (x >= 10)
+	{
+		l += ft_putint(x / 10);
+		x %= 10;
+	}
+	if (x < 10)
+	{
+		l += ft_putchar(x + '0');
+	}
+	return (l);
 }
 
-int	ft_printf_str(va_list args)
+int	ft_printf_int(va_list args)
 {
-	char	*s;
+	int	x;
 
-	s = va_arg(args, char *);
-	return (ft_putstr(s));
+	x = va_arg(args, int);
+	return (ft_putint(x));
 }

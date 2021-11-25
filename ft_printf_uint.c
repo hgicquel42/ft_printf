@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_uint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 13:03:33 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:32:22 by hgicquel         ###   ########.fr       */
+/*   Created: 2021/11/25 16:20:54 by hgicquel          #+#    #+#             */
+/*   Updated: 2021/11/25 16:22:45 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_putuint(unsigned int x)
 {
-	size_t	i;
+	size_t	l;
 
-	i = 0;
-	while (s[i])
-		i++;
-	write(1, s, i);
-	return (i);
+	l = 0;
+	if (x >= 10)
+	{
+		l += ft_putuint(x / 10);
+		x %= 10;
+	}
+	if (x < 10)
+	{
+		l += ft_putchar(x + '0');
+	}
+	return (l);
 }
 
-int	ft_printf_str(va_list args)
+int	ft_printf_uint(va_list args)
 {
-	char	*s;
+	int	x;
 
-	s = va_arg(args, char *);
-	return (ft_putstr(s));
+	x = va_arg(args, unsigned int);
+	return (ft_putuint(x));
 }
