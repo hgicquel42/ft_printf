@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:04:59 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:52:38 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:02:00 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (length);
 }
-
-// int	main(void)
-// {
-// 	ft_printf("hello %X\n", -1);
-// 	printf("hello %X\n", -1);
-// 	return (0);
-// }
