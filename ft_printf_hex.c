@@ -6,13 +6,13 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:24:30 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:36:01 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:48:31 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long n)
+int	ft_puthex(unsigned int n)
 {
 	char	*hexab;
 	size_t	length;
@@ -29,7 +29,7 @@ int	ft_puthex(unsigned long n)
 	return (length);
 }
 
-int	ft_puthex2(unsigned long n)
+int	ft_puthex2(unsigned int n)
 {
 	char	*hexab;
 	size_t	length;
@@ -40,8 +40,8 @@ int	ft_puthex2(unsigned long n)
 		length += write(1, &hexab[n], 1);
 	else
 	{
-		length += ft_puthex(n / 16);
-		length += ft_puthex(n % 16);
+		length += ft_puthex2(n / 16);
+		length += ft_puthex2(n % 16);
 	}
 	return (length);
 }

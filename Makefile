@@ -1,4 +1,4 @@
-NAME = libft.a
+NAME = libftprintf.a
 
 COMMON = \
 	ft_printf.c \

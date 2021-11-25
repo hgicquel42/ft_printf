@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:04:59 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:36:36 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:52:38 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_parse(char type, va_list args)
 	if (type == 'x')
 		return (ft_printf_hex(args));
 	if (type == 'X')
-		return (ft_printf_hex(args));
+		return (ft_printf_hex2(args));
 	if (type == '%')
 		return (ft_printf_pct());
 	return (0);
@@ -68,9 +68,7 @@ int	ft_printf(const char *format, ...)
 
 // int	main(void)
 // {
-// 	int	length;
-
-// 	length = ft_printf("hello %x\n", -9999999999999);
-// 	printf("hello %x\n", -9999999999999);
+// 	ft_printf("hello %X\n", -1);
+// 	printf("hello %X\n", -1);
 // 	return (0);
 // }

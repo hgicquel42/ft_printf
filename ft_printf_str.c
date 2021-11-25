@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:03:33 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:32:22 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:45:05 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int	ft_printf_str(va_list args)
 	char	*s;
 
 	s = va_arg(args, char *);
+	if (!s)
+		return (ft_putstr("(null)"));
 	return (ft_putstr(s));
 }

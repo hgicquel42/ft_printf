@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 12:30:26 by hgicquel          #+#    #+#             */
-/*   Updated: 2021/11/25 16:36:17 by hgicquel         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:48:35 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_putint(long x);
 
 int	ft_putuint(unsigned int x);
 
-int	ft_puthex(unsigned long n);
+int	ft_puthex(unsigned int n);
 
 int	ft_printf(const char *format, ...);
 
